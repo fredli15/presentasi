@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemikiran Kalam Qodariyah</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+        :root {
+            --primary: #0f3460;
+            --secondary: #16213e;
+            --accent: #533483;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --text: #334155;
+            --background: #ffffff;
+            --gold: #e6b31e;
+            --teal: #0d9488;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ===== HEADER STYLES ===== */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 1rem;
+        }
+
+        .floating-calligraphy {
+            position: absolute;
+            font-family: 'Amiri', serif;
+            opacity: 0.2;
+            z-index: 0;
+            display: none;
+            /* Hidden on mobile by default */
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1.2s ease;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            position: relative;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s ease 0.3s both;
+            padding: 0 1rem;
+        }
+
+        .group-members {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            position: relative;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 1.2s ease 0.6s both;
+            width: fit-content;
+            max-width: 90%;
+        }
+
+        /* ===== NAVIGATION STYLES ===== */
+        nav {
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .logo-icon {
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links li {
+            margin: 0.5rem 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--light);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .text-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        .definition-box {
+            background: linear-gradient(to right, var(--light), #fff);
+            padding: 1.8rem 1.5rem;
+            border-left: 5px solid var(--accent);
+            border-radius: 8px;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .definition-box::before {
+            content: "" ";
+ font-family: 'Playfair Display', serif;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(83, 52, 131, 0.1);
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 1.3em;
+            color: var(--primary);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .concept {
+            display: inline-block;
+            background-color: rgba(83, 52, 131, 0.1);
+            padding: 0.2rem 0.7rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        /* ===== PRINCIPLES SECTION ===== */
+        .principles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .principle-card {
+            flex-basis: 100%;
+            padding: 2rem 1.5rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .principle-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            z-index: 1;
+        }
+
+        .principle-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background-image: url('/api/placeholder/200/200');
+            background-size: cover;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .principle-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 2;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+        }
+
+        .principle-title i {
+            margin-right: 0.75rem;
+            color: var(--accent);
+            font-size: 1.2rem;
+            background-color: rgba(83, 52, 131, 0.1);
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .principle-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== SCHOLARS SECTION ===== */
+        .scholars-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .scholar-card {
+            flex-basis: 300px;
+            max-width: 100%;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .scholar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .scholar-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .scholar-info {
+            padding: 1.5rem;
+        }
+
+        .scholar-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .scholar-period {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== VS SECTION ===== */
+        .vs-section {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .vs-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+
+        .vs-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.8rem 1.5rem;
+            width: 100%;
+            max-width: 500px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .vs-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 5vw, 1.8rem);
+            margin-bottom: 1.3rem;
+        }
+
+        .vs-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .vs-circle {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .vs-line {
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 10px;
+            flex-grow: 1;
+            max-width: 80px;
+        }
+
+        /* ===== QUOTE SECTION ===== */
+        .quote-section {
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .quote-marks {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            position: absolute;
+            opacity: 0.1;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .quote-open {
+            top: -20px;
+            left: 20px;
+        }
+
+        .quote-close {
+            bottom: -50px;
+            right: 20px;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            line-height: 1.7;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            display: inline-block;
+        }
+
+        .footer-social a:hover {
+            opacity: 1;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== MOBILE MENU STYLES ===== */
+        .mobile-menu-active .nav-links {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: white;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu-active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .mobile-menu-active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        /* ===== RESPONSIVE MEDIA QUERIES ===== */
+        @media (min-width: 768px) {
+            .floating-calligraphy {
+                display: block;
+            }
+
+            .floating-calligraphy:nth-child(1) {
+                top: 15%;
+                left: 10%;
+                font-size: 8rem;
+                transform: rotate(-15deg);
+                color: var(--gold);
+            }
+
+            .floating-calligraphy:nth-child(2) {
+                bottom: 10%;
+                right: 15%;
+                font-size: 10rem;
+                transform: rotate(10deg);
+                color: white;
+            }
+
+            .principle-card {
+                flex-basis: calc(50% - 1.5rem);
+            }
+
+            .vs-container {
+                flex-direction: row;
+            }
+
+            .vs-box {
+                width: 45%;
+            }
+
+            .vs-divider {
+                flex-direction: column;
+                width: auto;
+            }
+
+            .vs-line {
+                width: 4px;
+                height: 50px;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                position: relative;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                text-align: center;
+                padding-top: 1rem;
+            }
+
+            .nav-links li {
+                margin: 0.7rem 0;
+            }
+
+            .text-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .definition-box {
+                padding: 1.5rem 1rem;
+            }
+
+            .quote-container {
+                padding: 2rem 1rem;
+            }
+
+            .quote-marks {
+                font-size: 4rem;
+            }
+        }
+
+        /* Add JavaScript functionality for mobile menu */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-overlay"></div>
+        <div class="floating-calligraphy">قدر</div>
+        <div class="floating-calligraphy">حرية</div>
+        <div class="header-content container">
+            <h1 class="title">Pemikiran Kalam Qodariyah</h1>
+            <div class="subtitle">Studi Mendalam Tentang Konsep Kebebasan Manusia dan Takdir dalam Teologi Islam</div>
+            <div class="group-members">
+                <p>Disusun oleh:</p>
+                <p><strong>Femas Adi Saputra</strong> - NPM. 2271020101</p>
+                <p><strong>Fredli Fourqoni</strong> - NPM. 2271020103</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+                Qodariyah
+            </div>
+            <ul class="nav-links">
+                <li><a href="#latar-belakang">Latar Belakang</a></li>
+                <li><a href="#pengertian">Pengertian</a></li>
+                <li><a href="#prinsip">Prinsip Utama</a></li>
+                <li><a href="#perbandingan">Perbandingan</a></li>
+                <li><a href="#tokoh">Tokoh</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="latar-belakang">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Latar Belakang</h2>
+            <div class="text-content">
+                <p>Pemikiran kalam dalam Islam berkembang dengan beragam aliran yang memiliki pandangan teologis yang
+                    berbeda-beda. Salah satu aliran yang muncul dalam sejarah pemikiran Islam adalah Qodariyah. Aliran
+                    ini menekankan kebebasan manusia dalam menentukan nasibnya sendiri, berbeda dengan aliran Jabariyah
+                    yang menganggap bahwa segala sesuatu sudah ditentukan oleh Allah tanpa campur tangan manusia.</p>
+                <br>
+                <p>Qodariyah memiliki peran penting dalam diskursus teologi Islam, terutama dalam perdebatan mengenai
+                    takdir dan kehendak bebas. Pemahaman tentang aliran ini menjadi penting untuk memahami dinamika
+                    pemikiran Islam serta bagaimana konsep takdir diperdebatkan dalam sejarah Islam.</p>
+                <img src="/api/placeholder/700/400" alt="Ilustrasi Diskusi Teologi Islam"
+                    style="width: 100%; border-radius: 8px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-marks quote-open">"</div>
+                <p class="quote-text">Setiap individu memiliki kendali penuh atas perbuatannya, sehingga ia bertanggung
+                    jawab atas segala konsekuensi dari pilihannya sendiri.</p>
+                <p class="quote-author">— Intisari Pemikiran Qodariyah</p>
+                <div class="quote-marks quote-close">"</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pengertian">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Pengertian Qodariyah</h2>
+            <div class="text-content">
+                <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+                    <div style="flex: 2;">
+                        <p>Qodariyah adalah salah satu aliran dalam ilmu kalam Islam yang berpendapat bahwa manusia
+                            memiliki kebebasan penuh dalam menentukan perbuatannya tanpa campur tangan Tuhan. Nama <span
+                                class="highlight">Qodariyah</span> berasal dari kata <span
+                                class="highlight arabic">قدر</span> (<span class="highlight">qadar</span>) yang berarti
+                            "ketentuan" atau "takdir," tetapi dalam konteks ini, Qodariyah justru menolak konsep bahwa
+                            segala sesuatu telah ditentukan oleh Allah. Sebaliknya, mereka menekankan kebebasan manusia
+                            dalam memilih dan bertanggung jawab atas amal perbuatannya.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="/api/placeholder/300/300" alt="Kaligrafi Qadar"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+
+                <div class="definition-box">
+                    <p>Pemikiran ini muncul sebagai reaksi terhadap aliran <span class="highlight">Jabariyah</span>,
+                        yang berpendapat bahwa manusia tidak memiliki kehendak bebas dan segala sesuatu telah ditentukan
+                        oleh Allah sejak awal. Qodariyah berpegang teguh pada konsep keadilan Tuhan (<span
+                            class="concept">'adl</span>), yang berarti bahwa Allah tidak akan menghukum manusia atas
+                        sesuatu yang di luar kendali mereka. Oleh karena itu, manusia diberi kehendak bebas (<span
+                            class="concept">ikhtiyar</span>) untuk melakukan kebaikan atau kejahatan, dan mereka akan
+                        menerima balasan sesuai dengan perbuatannya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sejarah">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Sejarah Perkembangan Qodariyah</h2>
+            <div class="text-content">
+                <div style="display: flex; gap: 30px; align-items: center; margin-bottom: 30px;">
+                    <div style="flex: 2;">
+                        <p>Qodariyah muncul pada abad ke-7 M sebagai reaksi terhadap pandangan Jabariyah yang menyatakan
+                            bahwa manusia tidak memiliki kehendak bebas dan semua perbuatannya telah ditentukan oleh
+                            Allah. Pemikiran ini berkembang di tengah perdebatan teologis yang terjadi pada masa
+                            Kekhalifahan Umayyah, ketika banyak diskusi tentang keadilan Tuhan dan kebebasan manusia
+                            mulai muncul.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="/api/placeholder/350/250" alt="Ilustrasi Era Umayyah"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+
+                <div class="definition-box" style="background: linear-gradient(to right, #f8f9fa, #ffffff);">
+                    <p>Dalam konteks politik, pemikiran Qodariyah juga menjadi bentuk kritik terhadap dinasti Umayyah
+                        yang sering kali menggunakan konsep takdir untuk membenarkan kebijakan mereka, termasuk dalam
+                        hal kekuasaan dan kezaliman. Para penguasa Umayyah sering mengatakan bahwa kekuasaan mereka
+                        adalah kehendak Tuhan yang tidak bisa diubah, sehingga rakyat harus menerimanya tanpa protes.
+                        Para penganut Qodariyah menentang gagasan ini dengan menekankan bahwa manusia memiliki kebebasan
+                        dan bertanggung jawab atas pilihannya.</p>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <h3 style="color: var(--primary); margin-bottom: 15px; font-family: 'Playfair Display', serif;">Fase
+                        Perkembangan Qodariyah</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div
+                            style="flex: 1; min-width: 250px; background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px;">Fase Awal (80-100 H)</h4>
+                            <p>Ditandai dengan munculnya tokoh Ma'bad al-Juhani dan Ghailan ad-Dimasyqi yang mulai
+                                mengajarkan konsep kebebasan berkehendak manusia, meskipun masih bersifat sederhana.</p>
+                        </div>
+                        <div
+                            style="flex: 1; min-width: 250px; background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px;">Fase Pengembangan (100-130 H)</h4>
+                            <p>Pemikiran Qodariyah mulai sistematis dan mempengaruhi aliran teologi lain, terutama
+                                Mu'tazilah yang mengadopsi banyak prinsip Qodariyah dalam sistem teologinya.</p>
+                        </div>
+                        <div
+                            style="flex: 1; min-width: 250px; background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px;">Fase Integrasi (>130 H)</h4>
+                            <p>Qodariyah sebagai aliran independen mulai memudar, namun prinsip-prinsipnya terintegrasi
+                                ke dalam pemikiran Mu'tazilah dan beberapa aliran lainnya dalam sejarah teologi Islam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; display: flex; gap: 30px; align-items: center;">
+                    <div style="flex: 1;">
+                        <img src="/api/placeholder/400/300" alt="Peta Penyebaran Qodariyah"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                    <div style="flex: 2;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                            Penyebaran Geografis</h3>
+                        <p>Pemikiran Qodariyah terutama berkembang di wilayah Basrah dan Damaskus, kemudian menyebar ke
+                            berbagai wilayah kekuasaan Islam lainnya. Di Basrah, pemikiran ini berkembang di kalangan
+                            intelektual dan teolog, sementara di Damaskus, pemikiran ini lebih bernuansa politik sebagai
+                            bentuk perlawanan terhadap kekuasaan Bani Umayyah.</p>
+                        <p style="margin-top: 10px;">Meskipun sering mendapat tekanan dari penguasa, khususnya pada masa
+                            Khalifah Abdul Malik bin Marwan dan Hisyam bin Abdul Malik, pemikiran Qodariyah tetap hidup
+                            dan mempengaruhi diskursus teologi Islam hingga berabad-abad kemudian.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokoh">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Tokoh-tokoh Qodariyah</h2>
+            <div class="scholars-container">
+                <div class="scholar-card">
+                    <img src="/api/placeholder/300/200" alt="Ma'bad al-Juhani" class="scholar-img">
+                    <div class="scholar-info">
+                        <h3 class="scholar-name">Ma'bad al-Juhani</h3>
+                        <p class="scholar-period">Wafat 80 H / 699 M</p>
+                        <p>Dianggap sebagai pelopor pemikiran Qodariyah. Beliau berani menentang pandangan Bani Umayyah
+                            yang cenderung deterministik. Akhirnya, Ma'bad dieksekusi oleh khalifah Abdul Malik bin
+                            Marwan karena pemikirannya yang dianggap kontroversial.</p>
+                    </div>
+                </div>
+
+                <div class="scholar-card">
+                    <img src="/api/placeholder/300/200" alt="Ghailan ad-Dimasyqi" class="scholar-img">
+                    <div class="scholar-info">
+                        <h3 class="scholar-name">Ghailan ad-Dimasyqi</h3>
+                        <p class="scholar-period">Wafat 105 H / 724 M</p>
+                        <p>Murid Ma'bad yang meneruskan pemikirannya. Beliau aktif menyebarkan gagasan tentang kebebasan
+                            manusia dan tanggung jawab individu. Dieksekusi pada masa Khalifah Hisyam bin Abdul Malik.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="scholar-card">
+                    <img src="/api/placeholder/300/200" alt="Wasil bin 'Atha" class="scholar-img">
+                    <div class="scholar-info">
+                        <h3 class="scholar-name">Wasil bin 'Atha</h3>
+                        <p class="scholar-period">Wafat 131 H / 748 M</p>
+                        <p>Pendiri Mu'tazilah yang banyak dipengaruhi oleh pemikiran Qodariyah. Beliau mengembangkan
+                            konsep lima prinsip (al-usul al-khamsah) yang menjadi dasar teologi Mu'tazilah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prinsip">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Pokok-pokok Pemikiran Qodariyah</h2>
+            <div class="text-content">
+                <p>Aliran Qodariyah memiliki beberapa konsep utama dalam pemikirannya, terutama yang berkaitan dengan
+                    kebebasan manusia dalam bertindak dan tanggung jawab moralnya terhadap perbuatannya. Berikut adalah
+                    pokok-pokok pemikiran Qodariyah:</p>
+
+                <div class="principles-container">
+                    <div class="principle-card">
+                        <h3 class="principle-title">
+                            <i class="fas fa-user-shield"></i>
+                            Kebebasan Berkehendak (Al-Ikhtiyar)
+                        </h3>
+                        <div class="principle-content">
+                            <p>Manusia memiliki kebebasan penuh dalam menentukan pilihan dan perbuatannya. Allah tidak
+                                memaksa manusia untuk melakukan suatu perbuatan, melainkan memberikan kemampuan dan
+                                kebebasan untuk memilih. Konsep ini bertolak belakang dengan pandangan Jabariyah yang
+                                meyakini bahwa manusia tidak memiliki kehendak bebas.</p>
+                            <p>Dalam pandangan Qodariyah, kebebasan ini adalah anugerah dari Allah yang harus
+                                dipertanggungjawabkan.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">
+                            <i class="fas fa-balance-scale"></i>
+                            Keadilan Tuhan (Al-'Adl)
+                        </h3>
+                        <div class="principle-content">
+                            <p>Allah Maha Adil dan tidak mungkin menzalimi hamba-Nya. Oleh karena itu, manusia harus
+                                memiliki kebebasan untuk menentukan perbuatannya sendiri agar Allah dapat menghukum atau
+                                memberi pahala secara adil berdasarkan pilihan manusia itu sendiri.</p>
+                            <p>Jika Allah telah menentukan semua perbuatan manusia, maka tidak adil jika manusia dihukum
+                                atas perbuatan yang sebenarnya telah ditentukan oleh Allah.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">
+                            <i class="fas fa-gavel"></i>
+                            Tanggung Jawab Individual (Al-Mas'uliyyah)
+                        </h3>
+                        <div class="principle-content">
+                            <p>Setiap manusia bertanggung jawab penuh atas perbuatannya sendiri. Tidak ada alasan bagi
+                                manusia untuk menyalahkan takdir atas kesalahan yang dilakukannya, karena ia memiliki
+                                kebebasan untuk memilih antara yang baik dan yang buruk.</p>
+                            <p>Konsep ini menekankan bahwa manusia akan mempertanggungjawabkan semua perbuatannya di
+                                hadapan Allah pada hari pembalasan.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">
+                            <i class="fas fa-brain"></i>
+                            Peran Akal (Al-'Aql)
+                        </h3>
+                        <div class="principle-content">
+                            <p>Akal manusia mampu membedakan antara yang baik dan yang buruk tanpa harus bergantung pada
+                                wahyu. Allah memberikan akal kepada manusia sebagai alat untuk memahami kebenaran dan
+                                kebaikan.</p>
+                            <p>Dengan akal tersebut, manusia dapat membuat keputusan moral dan bertindak sesuai dengan
+                                pilihannya sendiri, sebelum mendapatkan petunjuk dari wahyu.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">
+                            <i class="fas fa-pen-fancy"></i>
+                            Penciptaan Perbuatan (Khalq al-Af'al)
+                        </h3>
+                        <div class="principle-content">
+                            <p>Manusia adalah pencipta dari perbuatannya sendiri (<span class="arabic">الإنسان خالق
+                                    لأفعاله</span>). Allah memberikan kekuatan (<span class="concept">qudrah</span>) dan
+                                kemampuan (<span class="concept">istithaah</span>) kepada manusia, dan dengan kekuatan
+                                tersebut manusia menciptakan perbuatannya sendiri.</p>
+                            <p>Oleh karena itu, kebaikan dan kejahatan yang dilakukan adalah hasil dari keputusan
+                                manusia sendiri, bukan karena Allah telah menentukannya terlebih dahulu.</p>
+                        </div>
+                    </div>
+
+                    <div class="principle-card">
+                        <h3 class="principle-title">
+                            <i class="fas fa-book"></i>
+                            Interpretasi Al-Qur'an
+                        </h3>
+                        <div class="principle-content">
+                            <p>Qodariyah menafsirkan ayat-ayat Al-Qur'an yang berkaitan dengan takdir dengan pendekatan
+                                yang berbeda. Mereka cenderung menginterpretasikan ayat-ayat tersebut dengan cara yang
+                                mendukung konsep kebebasan manusia.</p>
+                            <p>Sebagai contoh, mereka menafsirkan ayat yang berbunyi <span class="arabic">"وَمَا
+                                    تَشَاءُونَ إِلَّا أَن يَشَاءَ اللَّهُ"</span> (Dan kamu tidak dapat menghendaki
+                                kecuali jika Allah menghendaki) dengan makna bahwa Allah telah memberikan kemampuan
+                                untuk berkehendak kepada manusia, bukan berarti Allah yang menentukan kehendak manusia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 50px; background-color: #f8fafc; padding: 30px; border-radius: 12px; border-left: 5px solid var(--teal);">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                        Implikasi Teologis</h3>
+                    <p>Pemikiran Qodariyah memiliki implikasi penting dalam teologi Islam, di antaranya:</p>
+                    <ul style="margin-top: 15px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">Menjunjung tinggi konsep tanggung jawab moral individual</li>
+                        <li style="margin-bottom: 10px;">Menolak fatalism (sikap pasrah pada takdir) yang dapat membuat
+                            manusia tidak berusaha</li>
+                        <li style="margin-bottom: 10px;">Mendorong manusia untuk aktif berbuat kebaikan atas pilihan
+                            sendiri</li>
+                        <li style="margin-bottom: 10px;">Menegaskan bahwa Allah tidak akan menghukum manusia atas
+                            sesuatu yang di luar kendali mereka</li>
+                        <li>Memahami bahwa ujian dan cobaan adalah bagian dari kebebasan manusia untuk mengambil
+                            pelajaran dan hikmah</li>
+                    </ul>
+
+                    <div style="margin-top: 25px;">
+                        <p>Secara historis, walaupun aliran Qodariyah sebagai entitas tersendiri telah memudar,
+                            pemikirannya tetap hidup dan memberikan pengaruh besar pada perkembangan teologi Islam,
+                            terutama pada aliran Mu'tazilah dan beberapa aspek pemikiran filsafat Islam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pengaruh">
+        <div class="parallax-bg"></div>
+        <div class="container">
+            <h2 class="section-title">Pengaruh Qodariyah dalam Teologi Islam</h2>
+            <div class="text-content">
+                <p>Meskipun Qodariyah sering dianggap sebagai aliran yang menyimpang oleh sebagian ulama Ahlus Sunnah,
+                    pemikiran mereka tetap memiliki pengaruh besar dalam perkembangan teologi Islam. Gagasan tentang
+                    kebebasan manusia, keadilan Tuhan, dan tanggung jawab individu telah memengaruhi berbagai aliran
+                    pemikiran dalam Islam, baik secara langsung maupun tidak langsung.</p>
+
+                <div style="display: flex; gap: 30px; margin: 30px 0; align-items: center;">
+                    <div style="flex: 1;">
+                        <img src="/api/placeholder/400/300" alt="Diskusi Teologi Islam"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                    <div style="flex: 2;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                            Pengaruh pada Mu'tazilah</h3>
+                        <p>Pengaruh terbesar Qodariyah terlihat pada aliran Mu'tazilah yang mengadopsi dan mengembangkan
+                            prinsip kebebasan kehendak manusia. Mu'tazilah menjadikan konsep keadilan Tuhan (<span
+                                class="concept">al-'adl</span>) sebagai salah satu dari lima prinsip dasar (<span
+                                class="concept">al-usul al-khamsah</span>) mereka, yang menegaskan bahwa Allah tidak
+                            mungkin berbuat zalim dengan menghukum manusia atas perbuatan yang tidak mereka pilih
+                            sendiri.</p>
+                    </div>
+                </div>
+
+                <div class="definition-box">
+                    <p><span class="highlight">Konsep kebebasan berkehendak</span> dari Qodariyah memberikan fondasi
+                        penting bagi perkembangan rasionalisme dalam Islam. Pendekatan ini memungkinkan diskusi teologis
+                        yang lebih mendalam tentang hubungan antara ketentuan Tuhan dan tanggung jawab manusia, yang
+                        memperkaya wacana intelektual Islam selama berabad-abad.</p>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <h3 style="color: var(--primary); margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                        Pengaruh Dalam Berbagai Aspek</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div
+                            style="flex: 1; min-width: 250px; background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--teal);">
+                            <h4 style="color: var(--teal); margin-bottom: 10px; display: flex; align-items: center;">
+                                <i class="fas fa-book" style="margin-right: 10px;"></i>
+                                Pengembangan Ilmu Kalam
+                            </h4>
+                            <p>Perdebatan tentang kehendak bebas yang dimulai oleh Qodariyah mendorong pengembangan
+                                metodologi dan terminologi yang lebih sistematis dalam ilmu kalam, menciptakan dasar
+                                bagi diskursus teologis yang lebih canggih.</p>
+                        </div>
+                        <div
+                            style="flex: 1; min-width: 250px; background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px; display: flex; align-items: center;">
+                                <i class="fas fa-balance-scale" style="margin-right: 10px;"></i>
+                                Pemikiran Hukum Islam
+                            </h4>
+                            <p>Konsep kebebasan dan tanggung jawab individu dari Qodariyah mempengaruhi perkembangan
+                                teori hukum dalam Islam, terutama dalam hal pertanggungjawaban individu atas
+                                perbuatannya (<span class="concept">taklif</span>).</p>
+                        </div>
+                        <div
+                            style="flex: 1; min-width: 250px; background-color: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid var(--gold);">
+                            <h4 style="color: var(--gold); margin-bottom: 10px; display: flex; align-items: center;">
+                                <i class="fas fa-users" style="margin-right: 10px;"></i>
+                                Gerakan Sosial-Politik
+                            </h4>
+                            <p>Gagasan tentang kehendak bebas dan penolakan terhadap fatalisme mempengaruhi gerakan
+                                reformis dalam sejarah Islam yang menekankan tanggung jawab manusia untuk mengubah
+                                kondisi sosial-politik mereka.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; display: flex; gap: 30px; align-items: center;">
+                    <div style="flex: 2;">
+                        <h3 style="color: var(--primary); margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                            Pengaruh pada Pemikiran Modern</h3>
+                        <p>Dalam konteks Islam modern, semangat Qodariyah mengenai kebebasan dan tanggung jawab individu
+                            menjadi penting dalam upaya reformasi dan pembaruan pemikiran Islam. Para pemikir reformis
+                            seperti Muhammad Abduh dan Muhammad Iqbal menghidupkan kembali diskusi tentang kebebasan
+                            manusia untuk mendorong umat Islam keluar dari sikap fatalistik dan pasif.</p>
+                        <p style="margin-top: 10px;">Pemikiran neo-Mu'tazilah di era modern juga mengambil inspirasi
+                            dari gagasan Qodariyah untuk mengembangkan tafsir progresif atas teks-teks keagamaan yang
+                            menekankan peran akal dan kebebasan manusia sebagai makhluk yang bertanggung jawab.</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <img src="/api/placeholder/350/250" alt="Pemikir Islam Modern"
+                            style="width: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+
+                <div class="definition-box"
+                    style="margin-top: 30px; background: linear-gradient(to right, #f8f9fa, #ffffff);">
+                    <p>Meskipun aliran Qodariyah sebagai kelompok independen tidak lagi eksis, warisan pemikiran mereka
+                        tentang kebebasan manusia dan tanggung jawab moral tetap menjadi bagian penting dari diskursus
+                        teologis Islam. Dalam banyak hal, perdebatan kontemporer tentang hubungan antara ketentuan Tuhan
+                        dan kebebasan manusia masih mencerminkan pertanyaan-pertanyaan yang pertama kali diangkat oleh
+                        para pemikir Qodariyah lebih dari seribu tahun yang lalu.</p>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <blockquote
+                        style="font-style: italic; color: var(--primary); font-size: 1.2rem; max-width: 80%; margin: 0 auto; font-family: 'Playfair Display', serif;">
+                        "Pemikiran Qodariyah, meskipun kontroversial pada masanya, telah memberikan sumbangan tak
+                        ternilai dalam memperkaya wacana teologis Islam dan mendorong pengembangan tradisi intelektual
+                        yang menghargai kebebasan dan tanggung jawab manusia."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="referensi">
+        <div class="container">
+            <h2 class="section-title">Daftar Pustaka</h2>
+            <div class="text-content">
+                <ol style="padding-left: 20px;">
+                    <li>Nasution, Harun. (2012). <em>Teologi Islam: Aliran-aliran, Sejarah, Analisa Perbandingan</em>.
+                        Jakarta: UI Press.</li>
+                    <li>Hanafi, A. (2015). <em>Theology Islam (Ilmu Kalam)</em>. Jakarta: Bulan Bintang.</li>
+                    <li>Rahman, Fazlur. (2017). <em>Islam and Modernity: Transformation of an Intellectual
+                            Tradition</em>. Chicago: University of Chicago Press.</li>
+                    <li>Watt, W. Montgomery. (2013). <em>The Formative Period of Islamic Thought</em>. Edinburgh:
+                        Edinburgh University Press.</li>
+                    <li>Abdurrahman, Muhammad. (2018). <em>Pemikiran Kalam dan Filsafat Islam</em>. Yogyakarta: Pustaka
+                        Pelajar.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-overlay"></div>
+        <div class="footer-content container">
+            <p class="footer-text">© 2025 - Pemikiran Kalam Qodariyah</p>
+            <p class="footer-text">Tugas Mata Kuliah Teologi Islam</p>
+            <p class="footer-text">Fakultas Ushuluddin dan Studi Agama</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+
+</html>
